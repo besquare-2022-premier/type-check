@@ -2,7 +2,7 @@
   "name": "@junchan/type-check",
   "version": "1.0.0",
   "description": "Common type checking utilities",
-  "main": "",
+  "main": "type-check.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
