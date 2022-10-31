@@ -28,5 +28,17 @@ function isInteger(o) {
   }
   return (o | 0) === o;
 }
+/**
+ * @template T
+ * Check weather the provided values is inside the enumeration
+ * @param {T} o value to test
+ * @param {T[]} valid_vals array of valid values to be accepted
+ */
+function inEnumeration(o, valid_vals) {
+  if (!o || typeof o !== typeof valid_vals[0]) {
+    return false;
+  }
+  return valid_vals.includes(o);
+}
 
-module.exports = { isString, isInteger };
+module.exports = { isString, isInteger, inEnumeration };
