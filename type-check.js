@@ -41,4 +41,17 @@ function inEnumeration(o, valid_vals) {
   return valid_vals.includes(o);
 }
 
-module.exports = { isString, isInteger, inEnumeration };
+/**
+ * Try to parse the string as date
+ * @param {string} o
+ * @param {boolean} allowEmpty consider empty string as a valid date. Default value is false
+ * @returns {boolean}
+ */
+function isValidDate(o, allowEmpty = false) {
+  return (
+    isString(o, allowEmpty) &&
+    (allowEmpty || new Date(o).toString() !== "Invalid Date")
+  );
+}
+
+module.exports = { isString, isInteger, inEnumeration, isValidDate };
