@@ -50,7 +50,7 @@ function inEnumeration(o, valid_vals) {
 function isValidDate(o, allowEmpty = false) {
   return (
     isString(o, allowEmpty) &&
-    (allowEmpty || new Date(o).toString() !== "Invalid Date")
+    ((!o && allowEmpty) || new Date(o).toString() !== "Invalid Date")
   );
 }
 
